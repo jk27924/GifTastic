@@ -36,3 +36,7 @@ input::placeholder {
     margin-right: 10px;
 }
 
+#buttons {
+    margin: 0 0 20px 0;
+}
+
