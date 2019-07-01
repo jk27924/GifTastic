@@ -31,8 +31,19 @@ input::placeholder {
     border: none;
     margin-bottom: 20px;
 }
+
 #submit:hover {
     background-color: rgb(245, 129, 129);
+}
+
+a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 25px;
+    float: right;
+    margin-top: 10px;
+    color: rgb(161, 29, 29);
+    text-shadow: 2px 2px gold;
 }
 
 .hero {
