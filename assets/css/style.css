@@ -17,3 +17,12 @@
     border: none;
     margin-bottom: 20px;
 }
+
+.hero {
+    background-color: white;
+    color: rgb(95, 94, 94);
+    border: 1px solid rgb(95, 94, 94);
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 19px;
+    margin-bottom: 10px;
+}
