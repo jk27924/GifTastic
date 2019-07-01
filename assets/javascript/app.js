@@ -25,11 +25,31 @@ $(document).ready(function() {
                     var characterImage = $("<img>");
                     characterImage.attr("src", results[i].images.fixed_height.url);
 
+                    characterImage.attr({
+                        "data-still": results[i].images.fixed_height_still.url,
+                        "data-animate": results[i].images.fixed_height.url,
+                        "data-state": "still",
+                        class: "gif"
+                    });
+
                     gifDiv.prepend(p);
                     gifDiv.prepend(characterImage);
 
                     $("#gifs-appear-here").prepend(gifDiv);
                 }
+
+                // Click gif files to change data-state
+                $(".gif").on("click", function () {
+
+                    var state = $(this).attr("data-state");
+                    if (state == "still") {
+                        $(this).attr("src", $(this).attr("data-animate"));
+                        $(this).attr("data-state", "animate");
+                    } else {
+                        $(this).attr("src", $(this).attr("data-still"));
+                        $(this).attr("data-state", "still");
+                    }
+                });
             
             });
 
