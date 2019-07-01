@@ -17,7 +17,7 @@ $(document).ready(function() {
 
                 $("#gifs-appear-here").empty();
 
-                for (var i = 0; i < results.length; i++) {
+                for (var i = 0; i < 10; i++) {
                         
                     var gifDiv = $("<div>");
                     var rating = results[i].rating;
