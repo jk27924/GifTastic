@@ -1,6 +1,8 @@
 $(document).ready(function() {
 
     $(document).on("click", ".hero", function() {
+    // Instead of looking at individual id hero first and at the document second, which I used in the beginning: $(".hero").on("click", function())
+    // $(document).on("click", ".hero", function(): This looks at the document first, and then the id hero second.
 
         var character = $(this).attr("data-character");
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + character + "&api_key=BZ4nrtkLSYMkvzP4rRPdieBJEF69cwkH";
