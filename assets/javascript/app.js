@@ -42,7 +42,12 @@ $(document).ready(function() {
 
         var createBtn = $("<button>");
 
+        createBtn.attr("class", "btn-primary btn hero");
+        createBtn.attr("data-character", $("#input").val());
+        createBtn.text($("#input").val());
+        console.log(createBtn);
 
+        $("#buttons").append(createBtn);
     });
 
 })
