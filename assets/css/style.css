@@ -42,6 +42,11 @@ input::placeholder {
     margin-right: 10px;
 }
 
+.hero:hover {
+    background-color: rgb(224, 185, 185);
+    border: 2px solid white;
+}
+
 #buttons {
     margin: 0 0 20px 0;
 }
