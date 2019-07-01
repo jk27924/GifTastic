@@ -25,11 +25,14 @@ input::placeholder {
     font-family: 'Julius Sans One', sans-serif;
     font-weight: bold;
     font-size: 20px;
-    background-color: rgb(95, 94, 94);
+    background-color: rgb(143, 141, 141);
     /* background-color: rgb(2, 128, 150); */
     color: white;
     border: none;
     margin-bottom: 20px;
+}
+#submit:hover {
+    background-color: rgb(245, 129, 129);
 }
 
 .hero {
@@ -44,7 +47,7 @@ input::placeholder {
 
 .hero:hover {
     background-color: rgb(224, 185, 185);
-    border: 2px solid white;
+    border: 1px solid white;
 }
 
 #buttons {
