@@ -25,12 +25,12 @@ $(document).ready(function() {
                     var rating = results[i].rating;
                     var p = $("<p>").text("Rating: " + rating);
                     var characterImage = $("<img>");
-                    characterImage.attr("src", results[i].images.fixed_height.url);
+                    characterImage.attr("src", results[i].images.fixed_height_still.url);
 
                     characterImage.attr({
+                        "data-state": "still",
                         "data-still": results[i].images.fixed_height_still.url,
                         "data-animate": results[i].images.fixed_height.url,
-                        "data-state": "still",
                         class: "gif"
                     });
 
@@ -44,7 +44,7 @@ $(document).ready(function() {
                 $(".gif").on("click", function () {
 
                     var state = $(this).attr("data-state");
-                    if (state == "still") {
+                    if (state === "still") {
                         $(this).attr("src", $(this).attr("data-animate"));
                         $(this).attr("data-state", "animate");
                     } else {
@@ -52,9 +52,7 @@ $(document).ready(function() {
                         $(this).attr("data-state", "still");
                     }
                 });
-            
             });
-
     });
 
     $("#submit").on("click", function (event) {
