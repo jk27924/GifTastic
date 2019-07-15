@@ -12,7 +12,16 @@ function displayHeroInfo() {
         url: queryURL,
         method: "GET"
     })
-    
+
+    // promises to get the result of ajax request
+    .then(function(response){
+
+        var results = response.data;
+        console.log(results);
+        
+        $("#gifs-appear-here").empty();
+
+    });
 }
 
 
