@@ -21,6 +21,17 @@ function displayHeroInfo() {
         
         $("#gifs-appear-here").empty();
 
+        for (var i = 0; i < results.length; i++) {
+        console.log(results[i]);
+
+            var gifDiv = $("<div>");
+            var rating = results[i].rating;
+            var p = $("<div>").text("Rating: " + rating);
+            var characterImage = $("<img>");
+            characterImage.attr("src", results[i].images.fixed_height_still.url);
+
+        };
+
     });
 }
 
