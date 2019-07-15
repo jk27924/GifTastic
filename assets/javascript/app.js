@@ -30,6 +30,13 @@ function displayHeroInfo() {
             var characterImage = $("<img>");
             characterImage.attr("src", results[i].images.fixed_height_still.url);
 
+            characterImage.attr({
+                "data-state": "still",
+                "data-still": results[i].images.fixed_height_still.url,
+                "data-animate": results[i].images.fixed_height.url,
+                class: "gif"
+            });  
+
         };
 
     });
