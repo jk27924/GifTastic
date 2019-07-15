@@ -57,7 +57,33 @@ function displayHeroInfo() {
         });
 
     });
-}
+};
+
+//function for diplaying hero data
+function renderButtons() {
+
+    // Preventing having repeated set of buttons that are already on the screen, when submitting with input value.
+    $("#buttons").empty();
+
+    // Looping through the array of heroes
+    for (var i = 0; i < marvelHeroes.length; i++) {
+
+        // Creating buttons for each hero in the array
+        var a = $("<button>");
+
+        // Adding a class of movie-btn to our button
+        a.addClass("heroBtn");
+
+        // Adding a data-attribute
+        a.attr("character-name", marvelHeroes[i]);
+
+        // Providing the character name on buttons
+        a.text(marvelHeroes[i]);
+
+        // Adding the button to the end of div id buttons
+        $("#buttons").append(a);
+    };
+};
 
 
 
