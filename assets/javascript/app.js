@@ -1,73 +1,77 @@
-$(document).ready(function() {
+// Initial array of Marvel Heroes
+var marvelHeroes = ["Hulk", "Captain America", "Spider Man", "Black Panther", "Thor", "Captain Marvel", "Deadpool", "Thanos", "Doctor Strange"];
 
-    $(document).on("click", ".hero", function() {
-    // Instead of looking at individual id hero first and at the document second, which I used in the beginning: $(".hero").on("click", function())
-    // $(document).on("click", ".hero", function(): This looks at the document first, and then the id hero second.
 
-        var character = $(this).attr("data-character");
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + character + "&api_key=BZ4nrtkLSYMkvzP4rRPdieBJEF69cwkH";
+// $(document).ready(function() {
 
-        $.ajax({
-            url: queryURL,
-            method: "GET"
-        })
+//     $(document).on("click", ".hero", function() {
+//     // Instead of looking at individual id hero first and at the document second, which I used in the beginning: $(".hero").on("click", function())
+//     // $(document).on("click", ".hero", function(): This looks at the document first, and then the id hero second.
 
-            .then(function(response) {
-            // promises to get the result of ajax request.
+//         var character = $(this).attr("data-character");
+//         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + character + "&api_key=BZ4nrtkLSYMkvzP4rRPdieBJEF69cwkH";
 
-                var results  = response.data;
+//         $.ajax({
+//             url: queryURL,
+//             method: "GET"
+//         })
 
-                $("#gifs-appear-here").empty();
+//             .then(function(response) {
+//             // promises to get the result of ajax request.
 
-                for (var i = 0; i < 10; i++) {
+//                 var results  = response.data;
+
+//                 $("#gifs-appear-here").empty();
+
+//                 for (var i = 0; i < 10; i++) {
                         
-                    var gifDiv = $("<div>");
-                    var rating = results[i].rating;
-                    var p = $("<p>").text("Rating: " + rating);
-                    var characterImage = $("<img>");
-                    characterImage.attr("src", results[i].images.fixed_height_still.url);
+//                     var gifDiv = $("<div>");
+//                     var rating = results[i].rating;
+//                     var p = $("<p>").text("Rating: " + rating);
+//                     var characterImage = $("<img>");
+//                     characterImage.attr("src", results[i].images.fixed_height_still.url);
 
-                    characterImage.attr({
-                        "data-state": "still",
-                        "data-still": results[i].images.fixed_height_still.url,
-                        "data-animate": results[i].images.fixed_height.url,
-                        class: "gif"
-                    });
+//                     characterImage.attr({
+//                         "data-state": "still",
+//                         "data-still": results[i].images.fixed_height_still.url,
+//                         "data-animate": results[i].images.fixed_height.url,
+//                         class: "gif"
+//                     });
 
-                    gifDiv.prepend(p);
-                    gifDiv.prepend(characterImage);
+//                     gifDiv.prepend(p);
+//                     gifDiv.prepend(characterImage);
 
-                    $("#gifs-appear-here").prepend(gifDiv);
-                }
+//                     $("#gifs-appear-here").prepend(gifDiv);
+//                 }
 
-                // Click gif files to change data-state
-                $(".gif").on("click", function () {
+//                 // Click gif files to change data-state
+//                 $(".gif").on("click", function () {
 
-                    var state = $(this).attr("data-state");
-                    if (state === "still") {
-                        $(this).attr("src", $(this).attr("data-animate"));
-                        $(this).attr("data-state", "animate");
-                    } else {
-                        $(this).attr("src", $(this).attr("data-still"));
-                        $(this).attr("data-state", "still");
-                    }
-                });
-            });
-    });
+//                     var state = $(this).attr("data-state");
+//                     if (state === "still") {
+//                         $(this).attr("src", $(this).attr("data-animate"));
+//                         $(this).attr("data-state", "animate");
+//                     } else {
+//                         $(this).attr("src", $(this).attr("data-still"));
+//                         $(this).attr("data-state", "still");
+//                     }
+//                 });
+//             });
+//     });
 
-    $("#submit").on("click", function (event) {
+//     $("#submit").on("click", function (event) {
 
-        event.preventDefault();
-            console.log("submit");
+//         event.preventDefault();
+//             console.log("submit");
 
-        var createBtn = $("<button>");
+//         var createBtn = $("<button>");
 
-        createBtn.attr("class", "btn-primary btn hero");
-        createBtn.attr("data-character", $("#input").val());
-        createBtn.text($("#input").val());
-        console.log(createBtn);
+//         createBtn.attr("class", "btn-primary btn hero");
+//         createBtn.attr("data-character", $("#input").val());
+//         createBtn.text($("#input").val());
+//         console.log(createBtn);
 
-        $("#buttons").append(createBtn);
-    });
+//         $("#buttons").append(createBtn);
+//     });
 
-})
+// })
