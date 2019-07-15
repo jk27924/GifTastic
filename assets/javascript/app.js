@@ -90,11 +90,28 @@ $(document).on("click", ".heroBtn", displayHeroInfo);
 
     renderButtons();
 
+// Click event for the Submit button
+$("#submit").on("click", function(event) {
+
+    // Preventing to have dafault action when the page is refreshed
+    event.preventDefault()
+
+    // Grabbing the input value + trimming spaces
+    var character = $("#input").val().trim();
+
+    // Adding character from Search Input to the Array
+    marvelHeroes.push(character);
+
+    // Calling renderButtons which handles the processes of the array
+    renderButtons();
+});
 
 
 
 
 
+
+// << My JS Codes Version 1 with commented out buttons on the HTML file, which still works very good >>
 
 
 // $(document).ready(function() {
