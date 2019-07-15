@@ -37,6 +37,10 @@ function displayHeroInfo() {
                 class: "gif"
             });  
 
+            gifDiv.prepend(p);
+            gifDiv.prepend(characterImage);
+            
+            $("#gifs-appear-here").append(gifDiv);
         };
 
     });
