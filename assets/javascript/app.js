@@ -85,6 +85,10 @@ function renderButtons() {
     };
 };
 
+// Adding a click event
+$(document).on("click", ".heroBtn", displayHeroInfo);
+
+    renderButtons();
 
 
 
