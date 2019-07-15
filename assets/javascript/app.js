@@ -1,6 +1,27 @@
 // Initial array of Marvel Heroes
 var marvelHeroes = ["Hulk", "Captain America", "Spider Man", "Black Panther", "Thor", "Captain Marvel", "Deadpool", "Thanos", "Doctor Strange"];
 
+function displayHeroInfo() {
+    var character = $(this).attr("character-name");
+    console.log(this);
+
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + character + "&api_key=BZ4nrtkLSYMkvzP4rRPdieBJEF69cwkH&limit=10";
+    
+    // Grabbing data with get method
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    })
+    
+}
+
+
+
+
+
+
+
+
 
 // $(document).ready(function() {
 
