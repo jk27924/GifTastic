@@ -42,7 +42,7 @@ a {
     text-shadow: 2px 2px gold;
 }
 
-.hero {
+.heroBtn {
     background-color: white;
     color: rgb(95, 94, 94);
     border: 1px solid rgb(95, 94, 94);
@@ -50,9 +50,11 @@ a {
     font-size: 19px;
     margin-bottom: 10px;
     margin-right: 10px;
+    border-radius: 5px;
+    height: 40px;
 }
 
-.hero:hover {
+.heroBtn:hover {
     background-color: rgb(224, 185, 185);
     border: 1px solid white;
 }
